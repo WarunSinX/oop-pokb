@@ -19,6 +19,21 @@ public class AbstractBaseTrainer implements TrainerInterface {
     public boolean sendNewPokemon(){
         
     }
+    @Override
+    public boolean isDefeated(){
+
+    }
+    @Override
+    public PokemonInterface getPokemon(int a){
+        return this.pokemons;
+    }
+    @Override
+    public int getNumAlivePokemons(){
+        
+    }
     
+    public abstract Move selectMove(PokemonInterface){
+        
+    } 
 
 }

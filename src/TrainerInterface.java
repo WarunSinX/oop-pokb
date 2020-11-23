@@ -3,6 +3,7 @@ public interface TrainerInterface {
     public String getName();
     public PokemonInterface getCurrentPokemon();
     public boolean sendNewPokemon();
+    public boolean isDefeated();
     public PokemonInterface getPokemon(int a);
     public int getNumAlivePokemon();
     public MoveInterface selectMove(PokemonInterface A);
