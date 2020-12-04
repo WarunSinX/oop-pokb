@@ -16,6 +16,7 @@ public class Pokemon implements PokemonInterface {
         this.defense = def;
         this.speed = spd;
     }
+   
 
     @Override
     public int getAttackStat(){
@@ -35,7 +36,7 @@ public class Pokemon implements PokemonInterface {
     }
     @Override
     public int takeHit(PokemonInterface p,MoveInterface m){
-
+        
     }
     @Override
     public boolean faint(){
@@ -59,6 +60,6 @@ public class Pokemon implements PokemonInterface {
     }
     @Override
     public PokemonInterface clonePokemon(){
-        
+
     }
 }
