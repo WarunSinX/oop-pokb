@@ -119,7 +119,4 @@ public class PokemonBattle implements PokemonBattleInterface {
         System.out.println(loser.getName()+" has no Pokemon left.");
         System.out.println("The winner is "+winner.getName()+"!");
     }
-    
-
-    
 }
