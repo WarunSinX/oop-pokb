@@ -1,4 +1,4 @@
-## Folder Structure
+## Project Folder Structure
 
 The workspace contains one folders by default, where:
 
