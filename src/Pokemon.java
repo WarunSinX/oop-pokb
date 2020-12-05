@@ -16,50 +16,49 @@ public class Pokemon implements PokemonInterface {
         this.defense = def;
         this.speed = spd;
     }
-   
 
     @Override
     public int getAttackStat(){
-
+        return attack;
     }
     @Override
     public int getSpeedStat(){
-
+        return speed;
     }
     @Override
     public int getDefenseStat(){
-
+        return defense;
     }
     @Override
-    public int getHpStat(){
-
+    public int getHPStat(){
+        return hp;
     }
     @Override
     public int takeHit(PokemonInterface p,MoveInterface m){
-        
+        return 1;
     }
     @Override
     public boolean faint(){
-
+        return hp == 0 ? true : false;
     }
     @Override
     public Move selectAttackMove(TrainerInterface t){
-
+        return (Move)t.selectMove(this);
     }
     @Override
-    public Move getMove(int a){
-
+    public Move getMove(int n){
+        return moves[n];
     }
     @Override
     public String getName(){
-
+        return name;
     }
     @Override
     public String movesToString(){
-
+        return moves[0].getMoveName() + moves[1].getMoveName();
     }
     @Override
     public PokemonInterface clonePokemon(){
-
+        return this;
     }
 }

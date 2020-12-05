@@ -5,7 +5,7 @@ public interface PokemonInterface {
     public int getSpeedStat();
     public int getDefenseStat();
     public int getHPStat();
-    public int takeHit();
+    public int takeHit(PokemonInterface p,MoveInterface m);
     public boolean faint();
     public Move selectAttackMove(TrainerInterface a);
     public Move getMove(int m);
