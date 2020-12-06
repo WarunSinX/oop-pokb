@@ -35,11 +35,102 @@ public class Pokemon implements PokemonInterface {
     }
     @Override
     public int takeHit(PokemonInterface p,MoveInterface m){
+        if(m.getType() == Type.FIRE) {
+            if(this.type == Type.FIRE){
+                //effect
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.WATER){
+                return (int)((0.5*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GRASS){
+                return (int)((2.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.NORMAL){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GHOST){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+        }
+        else if(m.getType() == Type.WATER){
+            if(this.type == Type.FIRE){
+                //effect
+                return (int)((2.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.WATER){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GRASS){
+                return (int)((0.5*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.NORMAL){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GHOST){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+        }
+        else if(m.getType() == Type.GRASS){
+            if(this.type == Type.FIRE){
+                //effect
+                return (int)((0.5*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.WATER){
+                return (int)((2.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GRASS){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.NORMAL){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GHOST){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+        }
+        else if(m.getType() == Type.NORMAL){
+            if(this.type == Type.FIRE){
+                //effect
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.WATER){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GRASS){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.NORMAL){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GHOST){
+                return (int)((0.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+        }
+        else if(m.getType() == Type.GHOST){
+            if(this.type == Type.FIRE){
+                //effect
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.WATER){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GRASS){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.NORMAL){
+                return (int)((0.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+            else if(this.type == Type.GHOST){
+                return (int)((1.0*m.getBaseDamage()*p.getAttackStat())/this.defense);
+            }
+        }
         return 1;
+        
     }
     @Override
     public boolean faint(){
-        return hp == 0 ? true : false;
+        return hp <= 0 ? true : false;
     }
     @Override
     public Move selectAttackMove(TrainerInterface t){

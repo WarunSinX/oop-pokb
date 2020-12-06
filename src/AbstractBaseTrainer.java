@@ -21,7 +21,7 @@ public class AbstractBaseTrainer implements TrainerInterface {
     }
     @Override
     public boolean isDefeated(){
-
+        
     }
     @Override
     public PokemonInterface getPokemon(int a){
