@@ -5,6 +5,6 @@ public interface TrainerInterface {
     public boolean sendNewPokemon();
     public boolean isDefeated();
     public PokemonInterface getPokemon(int a);
-    public int getNumAlivePokemon();
+    public int getNumAlivePokemons();
     public MoveInterface selectMove(PokemonInterface A);
 }
