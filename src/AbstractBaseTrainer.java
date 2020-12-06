@@ -62,8 +62,6 @@ public abstract class AbstractBaseTrainer implements TrainerInterface {
         return check;
     }
     
-    public abstract Move selectMove(PokemonInterface p){
-       
-    } 
+    public abstract Move selectMove(PokemonInterface p);
 
 }
