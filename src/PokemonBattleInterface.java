@@ -1,5 +1,3 @@
-
-
 public interface PokemonBattleInterface {
-public void battle();
+    public void battle() throws CheckNullPointerException;
 }

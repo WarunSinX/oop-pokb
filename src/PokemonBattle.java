@@ -1,13 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author super
- */
 public class PokemonBattle implements PokemonBattleInterface {
     
     protected TrainerInterface trainer1;
@@ -21,13 +11,12 @@ public class PokemonBattle implements PokemonBattleInterface {
     }
     
     @Override
-    public void battle() throws CheckedNullPointerException {
+    public void battle() throws CheckNullPointerException {
         if(trainer1 == null || trainer2 == null) {
-            throw new CheckedNullPointerException("Trainer cannot be null");
+            throw new CheckNullPointerException("Trainer cannot be null");
         }
         while(!playOneRound()) {}
     }
-    
     
     protected boolean playOneRound() {
         phase1PrintRoundInfo();
@@ -59,7 +48,7 @@ public class PokemonBattle implements PokemonBattleInterface {
         PokemonInterface fasterPokemon = p2;
         PokemonInterface slowerPokemon = p1;
         
-        // p1 also attacks first if p1's speed == p2's speed
+
         if(p1.getSpeedStat() >= p2.getSpeedStat()) {
             fasterPokemon = p1;
             slowerPokemon = p2;
@@ -85,8 +74,7 @@ public class PokemonBattle implements PokemonBattleInterface {
             System.out.println(victimTrainer.getName()+"'s "+victim.getName()+"'s HP: "+victim.getHPStat());
         }
     }
-    
-    // Set currentPokemon to the new one if the current one is dead
+
     protected void phase3DetermineResult() {
         determineResult(trainer1);
         determineResult(trainer2);
@@ -98,9 +86,7 @@ public class PokemonBattle implements PokemonBattleInterface {
             System.out.println(t.getName()+" is sending a new pokemon: "+n.getName());
         }
     }
-    
-    // (1) Determine whether the battle is over
-    // (2) Print out the name of the winner
+
     protected boolean phase4IsBattleOver() {
         System.out.println("<<<<<<< Ending Round "+round+" >>>>>>>");
         if(trainer1.isDefeated()) {
@@ -119,4 +105,5 @@ public class PokemonBattle implements PokemonBattleInterface {
         System.out.println(loser.getName()+" has no Pokemon left.");
         System.out.println("The winner is "+winner.getName()+"!");
     }
+    
 }
