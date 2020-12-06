@@ -3,9 +3,11 @@ public abstract class AbstractBaseTrainer implements TrainerInterface {
     protected PokemonInterface currentPokemon;
     protected String name;
 
-    public AbstractBaseTrainer(String n,PokemonInterface[] p){
+    public AbstractBaseTrainer(String n,PokemonInterface[] p) throws IllegalArgumentException
+    {   if(p.length>NUM_MAX_POKEMONS) throw new IllegalArgumentException("Is should less or equal to NUM_MAX_POKEMONS");
         this.name = n;
         this.pokemons = p;
+        this.currentPokemon = pokemons[0];
     }
     @Override
     public String getName(){
@@ -17,7 +19,7 @@ public abstract class AbstractBaseTrainer implements TrainerInterface {
     }
     @Override 
     public boolean sendNewPokemon(){
-        if(this.currentPokemon.faint() == false || this.isDefeated() ){
+        if(this.currentPokemon.faint() == false || this.isDefeated() == true ){
             return false;
         }
         else{
@@ -34,7 +36,7 @@ public abstract class AbstractBaseTrainer implements TrainerInterface {
     @Override
     public boolean isDefeated(){
         int check=0;
-        for(int i=0; i<=pokemons.length; i++){
+        for(int i=0; i<pokemons.length; i++){
             if(pokemons[i].faint()==true){
                 check++;
             }
@@ -47,15 +49,16 @@ public abstract class AbstractBaseTrainer implements TrainerInterface {
         }
     }
     @Override
-    public PokemonInterface getPokemon(int i){
+    public PokemonInterface getPokemon(int i)throws ArrayIndexOutOfBoundsException
+    {   if(i<0||i>=NUM_MAX_POKEMONS) throw new ArrayIndexOutOfBoundsException("Error ma bro!!");
         return this.pokemons[i];
     }
 
     @Override
     public int getNumAlivePokemons(){
         int check=0;
-        for(int i=0; i<=pokemons.length; i++){
-            if(pokemons[i].faint()==true){
+        for(int i=0; i<pokemons.length; i++){
+            if(pokemons[i].faint()==false){
                 check++;
             }
         }

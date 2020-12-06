@@ -4,6 +4,6 @@ public class BotTrainer extends AbstractBaseTrainer {
     }
     @Override
     public Move selectMove(PokemonInterface p){
-        return p.getMove(1);
+        return p.getMove(0);
     }
 }
