@@ -1,7 +1,7 @@
 ## Programming Project 2 : (PokemonBattle)
 
 977-210 Object-Oriented Programming 1/63
-Pokemon’s Battle (Poke)
+Pokemon’s Battle (Pokb)
 
 ## Folder Structure
 
